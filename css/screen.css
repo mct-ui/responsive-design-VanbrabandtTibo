@@ -200,6 +200,11 @@ a:focus {
     padding: 48px 24px 24px;
 }
 
+.o-row--md{
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
 @media (min-width: 768px) {
     html{
         font-size: 20px;
@@ -226,7 +231,7 @@ a:focus {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 70.5em; /* 90 * 16px = 1440px */
+    max-width: 56.4em; /* 90 * 16px = 1440px */
 }
 
 /*
@@ -357,6 +362,33 @@ a:focus {
     padding: 0;
 }
 
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    display: flow-root;
+}
+
+.o-section + .o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
@@ -409,6 +441,7 @@ a:focus {
     text-decoration: none;
     font-weight: 400;
     padding: 8px 0;
+    display: block;
 }
 
 .c-nav__link,
@@ -451,6 +484,9 @@ a:focus {
 
 @media (min-width: 992px) {
     .c-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .c-header__nav {
@@ -458,6 +494,15 @@ a:focus {
     }
 }
 
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0;
+}
 
 
 .u-max-width-xs {
